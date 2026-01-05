@@ -1,96 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* EVERSOL Design System - Solar Energy Premium Brand */
 
 @layer base {
   :root {
+    /* Primary: Deep Wine/Magenta - Brand Core */
+    --primary: 340 65% 28%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 340 60% 35%;
+    --primary-dark: 340 70% 20%;
+    
+    /* Background: Clean White */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --foreground: 340 65% 20%;
+    
+    /* Card: Soft warm white */
+    --card: 40 30% 98%;
+    --card-foreground: 340 65% 20%;
+    
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 340 65% 20%;
+    
+    /* Secondary: Light neutral for contrast */
+    --secondary: 40 20% 96%;
+    --secondary-foreground: 340 65% 20%;
+    
+    /* Muted: Soft backgrounds */
+    --muted: 40 15% 94%;
+    --muted-foreground: 340 30% 40%;
+    
+    /* Accent 1: Solar Yellow - Energy & Power */
+    --accent: 45 100% 50%;
+    --accent-foreground: 340 65% 15%;
+    --solar-yellow: 45 100% 50%;
+    --solar-yellow-light: 45 100% 60%;
+    --solar-yellow-dark: 40 100% 45%;
+    
+    /* Accent 2: Eco Green - Sustainability */
+    --eco-green: 145 60% 40%;
+    --eco-green-light: 145 55% 50%;
+    --eco-green-dark: 145 65% 30%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 340 20% 88%;
+    --input: 340 20% 88%;
+    --ring: 340 65% 28%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 340 65% 28%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 340 65% 15%;
+    --sidebar-accent: 340 60% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 340 50% 35%;
+    --sidebar-ring: 45 100% 50%;
+    
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(340 65% 28%) 0%, hsl(340 70% 20%) 100%);
+    --gradient-solar: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(40 100% 45%) 100%);
+    --gradient-eco: linear-gradient(135deg, hsl(145 60% 40%) 0%, hsl(145 65% 30%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(340 65% 28% / 0.1);
+    --shadow-md: 0 8px 24px -8px hsl(340 65% 28% / 0.15);
+    --shadow-lg: 0 16px 48px -12px hsl(340 65% 28% / 0.2);
+    --shadow-glow-yellow: 0 0 40px hsl(45 100% 50% / 0.3);
+    --shadow-glow-green: 0 0 40px hsl(145 60% 40% / 0.3);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 340 65% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 340 50% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 340 50% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 340 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 340 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 340 40% 15%;
+    --muted-foreground: 340 20% 65%;
+    
+    --accent: 45 100% 50%;
+    --accent-foreground: 340 65% 15%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 340 40% 20%;
+    --input: 340 40% 20%;
+    --ring: 45 100% 50%;
   }
 }
 
@@ -98,8 +117,131 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .solar-glow {
+    box-shadow: var(--shadow-glow-yellow);
+  }
+  
+  .eco-glow {
+    box-shadow: var(--shadow-glow-green);
+  }
+  
+  /* Section backgrounds */
+  .section-primary {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .section-light {
+    @apply bg-card;
+  }
+  
+  /* Animated underline */
+  .underline-animate {
+    position: relative;
+  }
+  
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--solar-yellow));
+    transition: width 0.3s ease;
+  }
+  
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Counter animation */
+  .counter-glow {
+    text-shadow: 0 0 30px hsl(var(--solar-yellow) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Text colors */
+  .text-solar {
+    color: hsl(var(--solar-yellow));
+  }
+  
+  .text-eco {
+    color: hsl(var(--eco-green));
+  }
+  
+  /* Background colors */
+  .bg-solar {
+    background-color: hsl(var(--solar-yellow));
+  }
+  
+  .bg-eco {
+    background-color: hsl(var(--eco-green));
+  }
+  
+  .bg-primary-light {
+    background-color: hsl(var(--primary-light));
+  }
+  
+  .bg-primary-dark {
+    background-color: hsl(var(--primary-dark));
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-solar {
+    background: var(--gradient-solar);
+  }
+  
+  .bg-gradient-eco {
+    background: var(--gradient-eco);
+  }
+  
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
   }
 }
